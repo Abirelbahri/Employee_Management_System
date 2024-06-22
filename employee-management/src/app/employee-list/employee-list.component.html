@@ -1,1 +1,10 @@
-<p>employee-list works!</p>
+<h2>Employee List</h2>
+<ul>
+  <li *ngFor="let employee of employees">
+    {{ employee.firstName }} {{ employee.lastName }} - {{ employee.position }}
+    <button>Delete</button>
+    <a>Edit</a>
+    <a>View</a>
+
+  </li>
+</ul>

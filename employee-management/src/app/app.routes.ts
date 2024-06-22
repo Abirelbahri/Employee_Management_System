@@ -5,14 +5,14 @@ import { EmployeeDetailComponent } from './employee-detail/employee-detail.compo
 import { EmployeeFormComponent } from './employee-form/employee-form.component';
 
 export const routes: Routes = [
-    { path: '', component: EmployeeListComponent },
-    { path: 'employee/:id', component: EmployeeDetailComponent },
-    { path: 'add', component: EmployeeFormComponent },
-    { path: 'edit/:id', component: EmployeeFormComponent }
+  { path: '', component: EmployeeListComponent },
+  { path: 'employee/:id', component: EmployeeDetailComponent },
+  { path: 'add', component: EmployeeFormComponent },
+  { path: 'edit/:id', component: EmployeeFormComponent }
 ];
 
 @NgModule({
-    imports: [RouterModule.forRoot(routes)],
-    exports: [RouterModule]
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
 })
 export class AppRoutingModule { }
