@@ -1,4 +1,4 @@
-using Microsoft.EntityFrameworkCore; // Add this line
+using Microsoft.EntityFrameworkCore;
 using EmployeeManagementAPI.Models;
 using Microsoft.OpenApi.Models;
 
@@ -18,6 +18,17 @@ builder.Services.AddSwaggerGen(c =>
 builder.Services.AddDbContext<EmployeeContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+// Add CORS policy
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAngularApp",
+        builder => builder
+            .WithOrigins("http://localhost:4200")
+            .AllowAnyMethod()
+            .AllowAnyHeader()
+            .AllowCredentials());
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -25,15 +36,16 @@ if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
 
-    // Enable middleware to serve generated Swagger as a JSON endpoint.
     app.UseSwagger();
 
-    // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
-    // specifying the Swagger JSON endpoint.
+
     app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "EmployeeManagementAPI v1"));
 }
 
 app.UseHttpsRedirection();
+
+// Use the CORS policy
+app.UseCors("AllowAngularApp");
 
 app.UseAuthorization();
 

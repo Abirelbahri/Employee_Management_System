@@ -50,7 +50,7 @@ public class EmployeesController : ControllerBase
     {
         if (id != employee.Id)
         {
-            return BadRequest();
+            return BadRequest("Employee ID mismatch.");
         }
 
         _context.Entry(employee).State = EntityState.Modified;

@@ -1,1 +1,17 @@
-<p>employee-form works!</p>
+<h2>{{ isEdit ? 'Edit' : 'Add' }} Employee</h2>
+<form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+  <label for="firstName">First Name:</label>
+  <input id="firstName" formControlName="firstName">
+  <label for="lastName">Last Name:</label>
+  <input id="lastName" formControlName="lastName">
+  <label for="email">Email:</label>
+  <input id="email" formControlName="email">
+  <label for="phoneNumber">Phone Number:</label>
+  <input id="phoneNumber" formControlName="phoneNumber">
+  <label for="position">Position:</label>
+  <input id="position" formControlName="position">
+  <label for="department">Department:</label>
+  <input id="department" formControlName="department">
+  <button type="submit">{{ isEdit ? 'Update' : 'Add' }}</button>
+</form>
+<a routerLink="/">Back to list</a>

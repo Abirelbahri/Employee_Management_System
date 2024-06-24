@@ -2,9 +2,10 @@
 <ul>
   <li *ngFor="let employee of employees">
     {{ employee.firstName }} {{ employee.lastName }} - {{ employee.position }}
-    <button>Delete</button>
-    <a>Edit</a>
-    <a>View</a>
-
+    <button (click)="deleteEmployee(employee.id)">Delete</button>
+    <a [routerLink]="['/edit', employee.id]">Edit</a>
+    <a [routerLink]="['/employee', employee.id]">View</a>
   </li>
 </ul>
+<a routerLink="/add">Add Employee</a>
+
