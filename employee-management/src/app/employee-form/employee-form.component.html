@@ -1,17 +1,30 @@
 <h2>{{ isEdit ? 'Edit' : 'Add' }} Employee</h2>
 <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
-  <label for="firstName">First Name:</label>
-  <input id="firstName" formControlName="firstName">
-  <label for="lastName">Last Name:</label>
-  <input id="lastName" formControlName="lastName">
-  <label for="email">Email:</label>
-  <input id="email" formControlName="email">
-  <label for="phoneNumber">Phone Number:</label>
-  <input id="phoneNumber" formControlName="phoneNumber">
-  <label for="position">Position:</label>
-  <input id="position" formControlName="position">
-  <label for="department">Department:</label>
-  <input id="department" formControlName="department">
+  <div class="form-group">
+    <label for="firstName">First Name:</label>
+    <input id="firstName" formControlName="firstName">
+  </div>
+  <div class="form-group">
+    <label for="lastName">Last Name:</label>
+    <input id="lastName" formControlName="lastName">
+  </div>
+  <div class="form-group">
+    <label for="email">Email:</label>
+    <input id="email" formControlName="email">
+  </div>
+  <div class="form-group">
+    <label for="phoneNumber">Phone Number:</label>
+    <input id="phoneNumber" formControlName="phoneNumber">
+  </div>
+  <div class="form-group">
+    <label for="position">Position:</label>
+    <input id="position" formControlName="position">
+  </div>
+  <div class="form-group">
+    <label for="department">Department:</label>
+    <input id="department" formControlName="department">
+  </div>
   <button type="submit">{{ isEdit ? 'Update' : 'Add' }}</button>
+  <a routerLink="/">Back to list</a>
 </form>
-<a routerLink="/">Back to list</a>
+
