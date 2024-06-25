@@ -16,6 +16,7 @@ Project Structure:
 Controllers/EmployeesController.cs: API endpoints for managing employees.
 Models/Employee.cs: Employee model.
 Data/EmployeeContext.cs: Database context for Entity Framework Core.
+
 2.Frontend (Angular)
 src/app/app.module.ts: Main Angular module.
 src/app/app.routes.ts: Application routing configuration.
